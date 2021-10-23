@@ -49,7 +49,6 @@
   position: relative;
   width:730px;
   line-height:96px;
-  font-size: 102px;
   font-weight: bold;
   left:64px;
   font-size:102px;
@@ -170,7 +169,7 @@
 /*** Цифры и факты  ***/
 .feynman {
   height: 890px;
-  padding-top:100px; 
+  padding-top:100px;
   background-color:#e0d9d9;
   position: relative;
   background-image: url(../images/feynman.png);
@@ -209,11 +208,11 @@
 /*** Блок Принципы обучения  ***/
 .kaufman {
   background-color:black;
-  position: relative; 
+  position: relative;
   padding-bottom:90px;
   color: white;
   overflow:hidden;
-  z-index:1
+  z-index:1;
 }
 .selection-title__dark {
   width:60%;
@@ -244,17 +243,15 @@
 .table__cell_theme-dark {
   width: 200px;
   margin-top: 80px;
+  line-height: 1.2;
+  font-size:18px;
+  font-weight: normal;
 }
 .table__heading_theme-dark {
   line-height: 1.15;
   font-size:24px;
   font-weight: bold;
   margin-bottom: 20px;
-}
-.table__cell_theme-dark {
-  line-height: 1.2;
-  font-size:18px;
-  font-weight: normal;
 }
 .kaufman__triangle {
   background-image:url(../images/kaufman-triangle.svg);
@@ -323,7 +320,7 @@
 }
 .footer__social-icons {
   width:16px;
-  height:16px; 
+  height:16px;
   margin-right: 10px;
   background-size: contain;
   position: relative;
