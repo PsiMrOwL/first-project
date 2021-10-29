@@ -1,4 +1,4 @@
-.page {
+                                                                                                                                                                                                                                .page {
   min-width: 1100px;
   /* мы ещё не умеем делать мобильную версию сайта, */
   /* поэтому выше установлена минимальная ширина страницы */
@@ -13,33 +13,10 @@
 .header__square-pic {
   height: 568px;
   width: 568px;
-}
-
-/* и элемента с модификатором вида ключ-значение */
-.table__cell_theme_dark {
-  width: 200px;
-  color: white;
-  margin-right: 0;
-  margin-top: 80px;
-}
-
-li {
-  list-style-type: none;
-}
-ul {
-  padding-left: 0;
-  margin-left: 0;
-}
-a {
-  color: #f2f2f2;
-  text-decoration: none;
-}
-a:hover {
-  color: #2f80ed;
-}
-h1, h2, h3, p {
-  font-family: 'Helvetica Neue', 'Arial', sans-serif;
-  margin: 0;
+  position: absolute;
+  top:64px;
+  background-color:#2f80ed;
+  right: 0;
 }
 
 /*** Первый блок - шапка ***/
@@ -50,6 +27,8 @@ h1, h2, h3, p {
   background-color:#f2f2f2;
   display:flex;
   position: relative;
+  align-items: center;
+  overflow: hidden;
 }
 .logo {
   background-position: center;
@@ -64,42 +43,37 @@ h1, h2, h3, p {
   width: 183px;
   height:  32px;
 }
-.header_title {
-  position: relative;
+.header__title {
   width: 730px;
   line-height: 96px;
   font-weight: bold;
-  left: 64px;
+  margin-left: 64px;
   font-size: 102px;
-  margin-top: auto;
-  margin-bottom: auto;
+  z-index: 2;
 }
-.header_subtitle {
+.header__subtitle {
   position: absolute;
   line-height:25px;
   font-size: 18px;
   bottom: 30px;
   left: 64px;
   width: 388px;
+  z-index: 2;
 }
-.link {
+.header__link {
+  color: #2f80ed;
+  text-decoration: none;
+}
+.header__link:hover {
   color: #2f80ed;
 }
-.header_main-illustration {
+.header__main-illustration {
   position: absolute;
   width: 765px;
   height: 608px;
   right: 0;
   bottom: 0;
   z-index: 1;
-}
-.header_square-pic {
-  position: absolute;
-  height: 568px;
-  width: 568px;
-  top:64px;
-  background-color:#2f80ed;
-  right: 0;
 }
 
 /*** Общие блоки с контентом  ***/
@@ -120,7 +94,7 @@ h1, h2, h3, p {
 .two-columns__brief {
   line-height: 1.2;
   font-size: 18px;
-  color: blue;
+  color: #2f80ed;
   width: 175px;
   font-weight: normal;
 }
@@ -133,7 +107,7 @@ h1, h2, h3, p {
   font-size: 24px;
   margin-bottom: 30px;
 }
-.span-accent {
+.two-columns__span-accent {
   font-weight: bold;
 }
 
@@ -185,8 +159,6 @@ h1, h2, h3, p {
   font-size: 18px;
   font-weight: normal;
 }
-
-/*** Цифры и факты  ***/
 .feynman {
   height: 890px;
   padding-top: 100px;
@@ -206,7 +178,7 @@ h1, h2, h3, p {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 70px;
-  top: 100px;
+  margin-top: 100px;
 }
 .feynman__subtitle {
   line-height: 51px;
@@ -223,18 +195,22 @@ h1, h2, h3, p {
   position: absolute;
   top: 50%;
   right: 48px;
+  text-decoration: none;
 }
-
+.feynman__link:hover {
+  color: #2f80ed;
+}
 /*** Блок Принципы обучения  ***/
 .kaufman {
   background-color:#1f1f1f;
   position: relative;
-  padding-bottom:90px;
+  padding-bottom: 90px;
   color: white;
   overflow: hidden;
   z-index: 1;
+  padding-top: 90px;
 }
-.selection-title__dark {
+.section-title_theme_dark {
   width: 60%;
   line-height: 1.15;
   font-size: 60px;
@@ -242,10 +218,9 @@ h1, h2, h3, p {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 90px;
   margin-bottom: 20px;
 }
-.section-subtitle__dark {
+.section-subtitle_theme_dark {
   line-height: 34px;
   font-size: 24px;
   font-weight: normal;
@@ -253,19 +228,24 @@ h1, h2, h3, p {
   margin-left: auto;
   margin-right: auto;
 }
-.table-theme__dark {
-  margin-left: auto;
-  margin-right: auto;
+.table__theme_dark {
   display: flex;
   flex-wrap: wrap;
   width: 1100px;
   justify-content: space-between;
+  margin: auto;
 }
 .table__heading_theme_dark {
   line-height: 1.15;
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
+}
+.table__cell_theme_dark {
+  width: 200px;
+  color: white;
+  margin-right: 0;
+  margin-top: 80px;
 }
 .table__text_theme_dark {
   line-height: 1.2;
@@ -289,37 +269,34 @@ h1, h2, h3, p {
   padding-top: 60px;
   padding-bottom: 40px;
   color: #f2f2f2;
+  display: flex;
+  justify-content: center;
 }
 .footer__columns {
-  width: 90%;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+}
+.footer__column_content_copyright {
+  flex-basis: 711px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   min-height: 350px;
 }
-.footer__column_content-copyright {
-  flex-basis: 711px;
-}
-.logo__place-footer {
+.logo__place_footer {
   width: 183px;
   height: 35px;
   background-image: url(../images/logo_place_footer.svg);
-  top: 0;
-  left: 0;
-  position: absolute;
 }
 .footer__author {
   line-height: 25px;
   font-size: 18px;
-  bottom: 0;
-  left: 0;
-  position: absolute;
   margin-bottom: 18px;
   margin-top: 18px;
 }
-.footer__column_content-info {
+.footer__column_content_info {
   margin-left: auto;
   margin-right: auto;
   flex-shrink: 1.5;
@@ -335,14 +312,19 @@ h1, h2, h3, p {
   font-size: 18px;
   margin-bottom: 16px;
   margin-top: 20px;
-}
-.column__content_content-social {
-  margin-left:auto;
+  padding: 0;
+  list-style-type: none;
 }
 .footer__social-icons {
+  display: inline-block;
   width: 16px;
   height: 16px;
-  margin-right: 10px;
-  background-size: contain;
-  position: relative;
+  margin-right: 5px;
+}
+.footer__link {
+  text-decoration: none;
+  color: #f2f2f2;
+}
+.footer__link:hover {
+  color: #2f80ed;
 }
